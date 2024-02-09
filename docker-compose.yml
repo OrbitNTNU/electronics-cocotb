@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  cocotb:
+    container_name: cocotb
+    image: cocotb
+    build: 
+      context: ./
+      dockerfile: dockerfile
+    network_mode: host
+    volumes:
+      - cocotb:/home
+      - .:/home/app
+    command: /bin/bash -c "while sleep 1000; do :; done"
+
+volumes:
+  cocotb:
