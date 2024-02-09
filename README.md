@@ -29,7 +29,7 @@ modules/
 ----> sim
 ```
     
-4. Run the Docker container from the makefile, which in turn runs coctb inside the container
+4. Run the Docker container from the makefile, which in turn runs cocotb inside the container
 ```bash
 make sim
 ```
