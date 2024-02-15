@@ -1,0 +1,63 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/v2009.vpi";
+S_0xaaab075e0e90 .scope package, "$unit" "$unit" 2 1;
+ .timescale -9 -12;
+S_0xaaab075e1020 .scope module, "pc" "pc" 3 1;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 1 "inc";
+    .port_info 3 /OUTPUT 8 "out";
+P_0xaaab075e11b0 .param/l "WIDTH" 0 3 2, +C4<00000000000000000000000000001000>;
+L_0xffff82c94018 .functor BUFT 1, C4<0000>, C4<0>, C4<0>, C4<0>;
+v0xaaab07607030_0 .net *"_ivl_3", 3 0, L_0xffff82c94018;  1 drivers
+o0xffff82cdd048 .functor BUFZ 1, C4<z>; HiZ drive
+v0xaaab0762a4d0_0 .net "clk", 0 0, o0xffff82cdd048;  0 drivers
+o0xffff82cdd078 .functor BUFZ 1, C4<z>; HiZ drive
+v0xaaab0762a590_0 .net "inc", 0 0, o0xffff82cdd078;  0 drivers
+v0xaaab0762a660_0 .net "out", 7 0, L_0xaaab0762a9b0;  1 drivers
+v0xaaab0762a740_0 .var "pc", 3 0;
+o0xffff82cdd108 .functor BUFZ 1, C4<z>; HiZ drive
+v0xaaab0762a870_0 .net "rst", 0 0, o0xffff82cdd108;  0 drivers
+E_0xaaab07619a50 .event posedge, v0xaaab0762a870_0, v0xaaab0762a4d0_0;
+L_0xaaab0762a9b0 .concat [ 4 4 0 0], v0xaaab0762a740_0, L_0xffff82c94018;
+    .scope S_0xaaab075e1020;
+T_0 ;
+    %wait E_0xaaab07619a50;
+    %load/vec4 v0xaaab0762a870_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 4;
+    %assign/vec4 v0xaaab0762a740_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0xaaab0762a590_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.2, 8;
+    %load/vec4 v0xaaab0762a740_0;
+    %addi 1, 0, 4;
+    %assign/vec4 v0xaaab0762a740_0, 0;
+T_0.2 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0xaaab075e1020;
+T_1 ;
+    %vpi_call/w 3 22 "$dumpfile", "pc.vcd" {0 0 0};
+    %vpi_call/w 3 23 "$dumpvars", 32'sb00000000000000000000000000000001, v0xaaab0762a740_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "../rtl/pc.sv";

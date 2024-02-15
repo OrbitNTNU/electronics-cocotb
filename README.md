@@ -4,6 +4,8 @@
 
 This repository contains a testbench framework built using Python and cocotb (Coroutine based Cosimulation TestBench). The testbench is encapsulated within a Docker container for easy deployment and reproducibility.
 
+The repository contains some modules borrowed from [this repository](https://github.com/patricab/sap-1/)
+
 ## Requirements
 - Docker: To run the testbench within the container.
 - Docker Compose

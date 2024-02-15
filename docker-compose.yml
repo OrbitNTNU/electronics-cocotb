@@ -10,7 +10,7 @@ services:
     network_mode: host
     volumes:
       - cocotb:/home
-      - .:/home/app
+      - ./modules:/home/modules
     command: /bin/bash -c "while sleep 1000; do :; done"
 
 volumes:

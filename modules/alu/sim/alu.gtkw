@@ -1,0 +1,39 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Sat Jun  3 13:56:35 2023
+[*]
+[dumpfile] "/home/patricab/projects/sap-1/src/alu/sim/tb.vcd"
+[dumpfile_mtime] "Sat Jun  3 13:56:09 2023"
+[dumpfile_size] 1482
+[savefile] "/home/patricab/projects/sap-1/src/alu/sim/alu.gtkw"
+[timestart] 0
+[size] 960 1001
+[pos] -1 -1
+*-25.812544 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 297
+[signals_width] 94
+[sst_expanded] 1
+[sst_vpaned_height] 298
+@28
+tb.clk
+tb.rst
+tb.add
+tb.sub
+tb.fi
+tb.en_a
+tb.en_b
+tb.load_a
+tb.load_b
+@22
+tb.a[7:0]
+@23
+tb.b[7:0]
+@22
+tb._a[7:0]
+tb._b[7:0]
+tb.out[7:0]
+@28
+tb.zero
+tb.carry
+[pattern_trace] 1
+[pattern_trace] 0

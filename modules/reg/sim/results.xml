@@ -1,6 +1,6 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1707411446" />
-    <testcase name="test_reg" classname="test_reg" file="/home/app/reg/sim/test_reg.py" lineno="8" time="0.0017371177673339844" sim_time_ns="30000.001" ratio_time="17269986.850714248" />
+    <property name="random_seed" value="1707985988" />
+    <testcase name="test_reg" classname="test_reg" file="/home/modules/reg/sim/test_reg.py" lineno="8" time="0.0016350746154785156" sim_time_ns="30000.001" ratio_time="18347787.13827705" />
   </testsuite>
 </testsuites>

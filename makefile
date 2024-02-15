@@ -1,24 +1,24 @@
 .PHONY: all
-SIM_DIRS := $(shell find app -type d -name "sim")
+SIM_DIRS := $(shell find modules -type d -name "sim")
 
-all: up sim
+all: sim
 
-restart: down up term
-
+restart: down up
 up:
 	sudo docker-compose up -d
 down:
 	sudo docker-compose down
 term:
-	docker exec -it -w /home/app cocotb /bin/bash
-sim:
-	docker run -w /home cocotb make -C $(SIM_DIRS)
+	docker exec -it -w /home/ cocotb /bin/bash
 
+sim: $(SIM_DIRS)
+
+$(SIM_DIRS): up
+	docker run -w /home cocotb make -C $@
 
 clean:
 	sudo docker image prune -f
 	sudo docker volume prune -f
-
 remove:
-	sudo docker rmi -f cocotob
-	sudo docker volume rm cocotob
+	sudo docker rmi -f cocotb
+	sudo docker volume rm cocotb
